@@ -37,10 +37,13 @@ http://localhost:3000/images/10.jpg?dim=320x200
 http://localhost:3000/images/10.jpg?dim=640x480 
 
 This api translator (translate.route) use google translator facility
+start server:
+1) in standalone node: node single.js .
+2) cluster mode: node cluster.js .
 
 Main features:
-1) Part of a skeleton already prefixed, structured and clustered
-2)Simplify the configuration of http / https accesses
+1) Part of a skeleton already prefixed, structured and clustered.
+2)Simplify the configuration of http / https accesses.
 3)Public part to integrate with angular / html5 / css for backoffice management.
 4) makes "resizing on the fly" of images, very useful for mobile devices.
 5) Integrates TDD tests with mocha
