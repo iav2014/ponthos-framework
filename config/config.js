@@ -10,6 +10,13 @@ module.exports = {
 		path: '/ws3/',
 		max_callers: 1000
 	},
+	redis: {
+		host: '127.0.0.1',
+		port: 6379,
+		database: 0,
+		password: '2121',
+		attempt:3
+	},
 	logger: {
 		levels: {
 			default: 'DEBUG'
