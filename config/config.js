@@ -1,6 +1,6 @@
 module.exports = {
 	
-	public_dir: '/Users/ariza/Documents/codigo/skmo-api/public',
+	public_dir: '/Users/ariza/Documents/codigo/pontos/public',
 	app: {
 		host: '0.0.0.0',
 		http: 3000,
