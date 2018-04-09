@@ -649,6 +649,7 @@
       "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz",
       "version": "1.0.34"
     },
+    "redis": "^2.8.0",
     "referrer-policy": {
       "integrity": "sha1-NXdOtzW/UPtsB46DM0tHI1AgfXk=",
       "resolved": "https://registry.npmjs.org/referrer-policy/-/referrer-policy-1.1.0.tgz",
