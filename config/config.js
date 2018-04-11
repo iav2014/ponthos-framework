@@ -33,7 +33,17 @@ module.exports = {
 		],
 		replaceConsole: false
 	},
-	
+	sql:{
+		test:{
+			uri: 'postgres://user:password@host:5432/test?ssl=true',
+			database: 'test',
+			port: 5432,
+			host: 'host',
+			user: 'user',
+			password:'password',
+			ssl:true
+		}
+	},
 	nosql: {
 		ok: 'connected to database:',
 		fail: 'error connection at database',
@@ -42,7 +52,7 @@ module.exports = {
 		},
 		test: {
 			//@ format mongodb://<dbUser>:<dbPassword>@<host1>:<port1>,<host2>:<port2>/<dbName>?replicaSet=<replicaSetName>
-			uri: "mongodb://localhost:27017,localhost:27018,localhost:27019/test?replicaSet=rs0",
+			uri: 'mongodb://localhost:27017,localhost:27018,localhost:27019/test?replicaSet=rs0',
 			options: {
 				keepAlive: 1,
 				connectTimeoutMS: 30000,
@@ -52,7 +62,7 @@ module.exports = {
 		},
 		test2: {
 			//@ format mongodb://<dbUser>:<dbPassword>@<host1>:<port1>,<host2>:<port2>/<dbName>?replicaSet=<replicaSetName>
-			uri: "mongodb://localhost:27017,localhost:27018,localhost:27019/test2?replicaSet=rs0",
+			uri: 'mongodb://localhost:27017,localhost:27018,localhost:27019/test2?replicaSet=rs0',
 			options: {
 				keepAlive: 1,
 				connectTimeoutMS: 30000,
