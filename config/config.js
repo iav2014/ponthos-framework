@@ -15,7 +15,7 @@ module.exports = {
 		port: 6379,
 		database: 0,
 		password: '2121',
-		attempt:3
+		attempt: 3
 	},
 	logger: {
 		levels: {
@@ -33,15 +33,22 @@ module.exports = {
 		],
 		replaceConsole: false
 	},
-	sql:{
-		test:{
-			uri: 'postgres://user:password@host:5432/test?ssl=true',
+	sql: {
+		postgres: {
+			uri: 'postgres://user@pass:host:5432/test?ssl=true',
 			database: 'test',
 			port: 5432,
 			host: 'host',
 			user: 'user',
-			password:'password',
-			ssl:true
+			password: 'password',
+			ssl: true
+		},
+		mysql: {
+			connectionLimit: 10,
+			database: 'test',
+			host: 'localhost',
+			user: 'root',
+			password: ''
 		}
 	},
 	nosql: {
