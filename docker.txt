@@ -1,0 +1,39 @@
+# how to create a ponthos docker container
+# to build:
+docker build -t ponthos .
+
+# run
+docker run -p 3000:3000 -d ponthos 
+
+# see images
+docker images
+
+# see process id
+docker ps -a
+
+# stop container
+docker stop <CONTAINER_ID>
+
+# stop all containers
+docker stop $(docker ps -a -q)
+
+# erase all containers
+docker rm $(docker ps -a -q)
+
+# delete all images
+docker rmi $(docker images -q)
+
+# entry at running container
+docker exec -it <CONTAINER_ID> /bin/bash
+
+# security
+docker run \
+  -e "NODE_ENV=production" \
+  -u "node" \
+  -m "300M" --memory-swap "1G" \
+  -w "/home/node/app" \
+  --name "my-nodejs-app" \
+  node [script]
+
+# ulimit properties
+docker run --ulimit nofile=262144:262144 -p 3000:3010 -d ponthos 

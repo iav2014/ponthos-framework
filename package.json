@@ -1,6 +1,11 @@
 {
   "requires": true,
   "lockfileVersion": 1,
+  "scripts": {
+    "test": "mocha --timeout 100000 --recursive --exit",
+    "start": "node cluster.js",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "accepts": {
       "integrity": "sha1-hiRnWMfdbSGmR0/whKR0DsBesh8=",
@@ -381,11 +386,7 @@
       "resolved": "https://registry.npmjs.org/hide-powered-by/-/hide-powered-by-1.0.0.tgz",
       "version": "1.0.0"
     },
-    "hoek": {
-      "integrity": "sha512-v0XCLxICi9nPfYrS9RL8HbYnXi9obYAeLbSP00BmnZwCK9+Ih9WOjoZ8YoHCoav2csqn4FOz4Orldsy2dmDwmQ==",
-      "resolved": "https://registry.npmjs.org/hoek/-/hoek-4.2.0.tgz",
-      "version": "4.2.0"
-    },
+    "hoek": "^5.0.3",
     "hpkp": {
       "integrity": "sha1-EOFCJk52IVpdMMROxD3mTe5tFnI=",
       "resolved": "https://registry.npmjs.org/hpkp/-/hpkp-2.0.0.tgz",
@@ -684,11 +685,7 @@
       "resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.1.tgz",
       "version": "5.1.1"
     },
-    "semver": {
-      "integrity": "sha1-LlpOcrqwNHLMl/cnU7RQiRLvVUA=",
-      "resolved": "https://registry.npmjs.org/semver/-/semver-1.1.4.tgz",
-      "version": "1.1.4"
-    },
+    "semver": "^5.5.0",
     "send": {
       "integrity": "sha512-ElCLJdJIKPk6ux/Hocwhk7NFHpI3pVm/IZOYWqUmoxcgeyM+MpxHHKhb8QmlJDX1pU6WrgaHBkVNm73Sv7uc2A==",
       "requires": {
@@ -734,21 +731,7 @@
       "resolved": "https://registry.npmjs.org/sntp/-/sntp-2.1.0.tgz",
       "version": "2.1.0"
     },
-    "sshpk": {
-      "integrity": "sha1-US322mKHFEMW3EwY/hzx2UBzm+M=",
-      "requires": {
-        "asn1": "0.2.3",
-        "assert-plus": "1.0.0",
-        "bcrypt-pbkdf": "1.0.1",
-        "dashdash": "1.14.1",
-        "ecc-jsbn": "0.1.1",
-        "getpass": "0.1.7",
-        "jsbn": "0.1.1",
-        "tweetnacl": "0.14.5"
-      },
-      "resolved": "https://registry.npmjs.org/sshpk/-/sshpk-1.13.1.tgz",
-      "version": "1.13.1"
-    },
+    "sshpk": "^1.14.2",
     "ssl-root-cas": "^1.2.5",
     "stack-trace": "0.0.10",
     "statuses": {
@@ -761,11 +744,7 @@
       "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz",
       "version": "0.10.31"
     },
-    "stringstream": {
-      "integrity": "sha1-TkhM1N5aC7vuGORjB3EKioFiGHg=",
-      "resolved": "https://registry.npmjs.org/stringstream/-/stringstream-0.0.5.tgz",
-      "version": "0.0.5"
-    },
+    "stringstream": "0.0.6",
     "tough-cookie": {
       "integrity": "sha1-C2GKVWW23qkL80JdBNVe3EdadWE=",
       "requires": {
