@@ -1,6 +1,37 @@
 module.exports = {
 	
 	public_dir: '/Users/ariza/Documents/codigo/pontos/public',
+	cache: {duration: 60},
+	log: {
+		timeStampFormat : 'YYYY-MM-DD HH:mm:ss.SSS',
+		fluentd: {
+			config: {
+				host: '10.200.3.23',
+				post: 24224,
+				label: 'API',
+				level: 'trace',
+			},
+			active: false,
+			tag: 'ponthos.api',
+		},
+		console: {
+			active: true,
+			level: 'trace',
+		},
+		file: {
+			active: true,
+			config: {
+				filename: 'API-%DATE%.log',
+				datePattern: 'YYYY-MM-DD',
+				zippedArchive: true,
+				maxSize: '50m',
+				level: 'trace',
+			},
+		},
+		elastic : {
+			level : 'trace',
+		},
+	},
 	app: {
 		host: '0.0.0.0',
 		http: 3000,
@@ -35,12 +66,12 @@ module.exports = {
 	},
 	sql: {
 		postgres: {
-			uri: 'postgres://user@pass:host:5432/test?ssl=true',
+			uri: 'postgres://sa@sgcb:s@nt@nd3r@host:5432/test?ssl=true',
 			database: 'test',
 			port: 5432,
 			host: 'host',
 			user: 'user',
-			password: 'password',
+			password: 'pass',
 			ssl: true
 		},
 		mysql: {
@@ -48,7 +79,8 @@ module.exports = {
 			database: 'test',
 			host: 'localhost',
 			user: 'root',
-			password: ''
+			password: '',
+			// ssl:true
 		}
 	},
 	nosql: {
