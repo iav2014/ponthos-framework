@@ -18,7 +18,7 @@ describe('#E2E translator, server start  ', function () {
     this.timeout(timeout);
     var register = {"from":"en","to":"es","message":"hello world!"};
     var options = {
-      uri:url+'translate.route',
+      uri:url+'translate.post',
       json:register
     };
     request.post(options, function (err, result) {
@@ -37,7 +37,7 @@ describe('#E2E translator, server start  ', function () {
     this.timeout(timeout);
     var register = {"from":"en","message":"hello world!"};
     var options = {
-      uri:url+'translate.route',
+      uri:url+'translate.post',
       json:register
     };
     request.post(options, function (err, result) {
@@ -46,8 +46,8 @@ describe('#E2E translator, server start  ', function () {
         done(err);
       }
       else {
-        should.exists(result.body.valid);
-        result.body.valid.should.be.equal(false);
+        should.exists(result.statusCode);
+        result.statusCode.should.be.equal(400);
         done();
       }
     });
