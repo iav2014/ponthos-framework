@@ -1,0 +1,173 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "ponthos",
+    "description": "nodejs api rest framework"
+  },
+  "host": "localhost:3000",
+  "basePath": "/ws3/",
+  "tags": [
+    {
+      "name": "mobile",
+      "description": "api example for mobile app"
+    },
+    {
+      "name": "translator",
+      "description": "api + example call to google translator"
+    },
+    {
+      "name": "mongo",
+      "description": "api  + mongodb example"
+    },
+    {
+      "name": "postgres",
+      "description": "api + postgres example"
+    },
+    {
+      "name": "redis",
+      "description": "api + redis example"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/ping.get": {
+      "get": {
+        "tags": [
+          "mobile"
+        ],
+        "description": "api example ping",
+        "parameters": [
+          {
+            "name": "to",
+            "in": "query",
+            "required": true,
+            "description": "any text to server send..."
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "execute transaction ok"
+          },
+          "400": {
+            "description": "Status code of 400 will be sent to response when params wont match schema"
+          },
+          "503": {
+            "description": "Status code of 503 will be sent to response when a client fails"
+          }
+        }
+      }
+    },
+    "/translate.post": {
+      "post": {
+        "tags": [
+          "mobile"
+        ],
+        "description": "translate text using google translator",
+        "parameters": [
+          {
+            "userName": "from",
+            "in": "body",
+            "description": "language source",
+            "schema": {
+              "$ref": "#/definitionsIn/translate-list"
+            },
+            "type": "string"
+          },
+          {
+            "userName": "to",
+            "in": "body",
+            "description": "language target",
+            "schema": {
+              "$ref": "#/definitionsIn/translate-list"
+            }
+          },
+          {
+            "userName": "message",
+            "in": "body",
+            "description": "message text",
+            "schema": {
+              "$ref": "#/definitionsIn/translate-list"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "execute transaction ok",
+            "schema": {
+              "$ref": "#/definitionsOut/user-apps-list"
+            }
+          },
+          "400": {
+            "description": "Status code of 400 will be sent to response when params wont match schema"
+          },
+          "503": {
+            "description": "Status code of 503 will be sent to response when a client fails"
+          }
+        }
+      }
+    },
+    "/translate.get": {
+      "get": {
+        "tags": [
+          "mobile"
+        ],
+        "description": "translate text using google translator",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "required": true,
+            "description": "language from trasnlate"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": true,
+            "description": "language to translate"
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "required": true,
+            "description": "message text"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "execute transaction ok",
+            "schema": {
+              "$ref": "#/definitionsOut/translate-list"
+            }
+          },
+          "400": {
+            "description": "Status code of 400 will be sent to response when params wont match schema"
+          },
+          "503": {
+            "description": "Status code of 503 will be sent to response when a client fails"
+          }
+        }
+      }
+    }
+  }
+}
+
+
