@@ -56,3 +56,4 @@ Main features:
 (televisa logout/login/flip)
 (NBC Telemundo señora acero && señor de los cielos)
 
+MIT License
